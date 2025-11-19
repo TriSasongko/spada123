@@ -8,43 +8,42 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h3 class="text-lg font-bold mb-4">Selamat Datang, {{ Auth::user()->name }}!</h3>
-                    @if (isset($pengumumans) && $pengumumans->count() > 0)
-                        <div class="mb-8">
-                            <h3 class="text-lg font-bold mb-4 text-gray-700 flex items-center">
-                                📢 Informasi Sekolah
-                            </h3>
-                            <div class="grid gap-4">
-                                @foreach ($pengumumans as $info)
-                                    <div
-                                        class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r shadow-sm flex items-start">
-                                        <div class="mr-4 text-blue-500 mt-1">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div class="flex-1">
-                                            <h4 class="font-bold text-blue-900 text-lg">{{ $info->judul }}</h4>
-                                            <p class="text-sm text-blue-700 mt-1 whitespace-pre-line">
-                                                {{ $info->isi }}</p>
-                                            <div class="flex justify-between items-center mt-2">
-                                                <span
-                                                    class="text-xs text-blue-400">{{ $info->created_at->diffForHumans() }}</span>
-                                                <span
-                                                    class="text-xs bg-blue-200 text-blue-800 px-2 py-0.5 rounded font-bold">
-                                                    Untuk: {{ ucfirst($info->target) }}
-                                                </span>
-                                            </div>
+
+                @if (isset($pengumumans) && $pengumumans->count() > 0)
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold mb-4 text-gray-700 flex items-center">
+                            📢 Informasi Sekolah
+                        </h3>
+                        <div class="grid gap-4">
+                            @foreach ($pengumumans as $info)
+                                <div
+                                    class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r shadow-sm flex items-start">
+                                    <div class="mr-4 text-blue-500 mt-1">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-blue-900 text-lg">{{ $info->judul }}</h4>
+                                        <p class="text-sm text-blue-700 mt-1 whitespace-pre-line">{{ $info->isi }}
+                                        </p>
+                                        <div class="flex justify-between items-center mt-2">
+                                            <span
+                                                class="text-xs text-blue-400">{{ $info->created_at->diffForHumans() }}</span>
+                                            <span
+                                                class="text-xs bg-blue-200 text-blue-800 px-2 py-0.5 rounded font-bold">
+                                                Untuk: {{ ucfirst($info->target) }}
+                                            </span>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
-                    @endif
+                    </div>
+                @endif
+                <div class="p-6 text-gray-900">
+                    <h3 class="text-lg font-bold mb-4">Selamat Datang, {{ Auth::user()->name }}!</h3>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
