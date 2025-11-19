@@ -29,9 +29,9 @@ class DashboardController extends Controller
         // --- [BARU] AMBIL PENGUMUMAN ---
         // Ambil pengumuman yang targetnya 'semua' ATAU 'siswa'
         $pengumumans = Pengumuman::whereIn('target', ['semua', 'siswa'])
-                        ->latest()
-                        ->take(3) // Ambil 3 terbaru saja agar tidak penuh
-                        ->get();
+            ->latest()
+            ->take(3) // Ambil 3 terbaru saja agar tidak penuh
+            ->get();
         // -------------------------------
 
         // Ambil guru-guru yang mengajar di kelas siswa ini

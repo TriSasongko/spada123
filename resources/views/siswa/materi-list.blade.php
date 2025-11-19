@@ -22,7 +22,7 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
 
             {{-- Inisialisasi Alpine.js untuk tab --}}
-            <div x-data="{ activeTab: 'ujian' }">
+            <div x-data="{ activeTab: 'materi' }">
 
                 {{-- Tab Header --}}
                 <div class="flex border-b border-gray-200 mb-6">
